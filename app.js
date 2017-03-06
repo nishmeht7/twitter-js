@@ -1,7 +1,10 @@
 const express = require('express'); 
 const volleyball = require('volleyball');
+const nunjucks = require('nunjucks');
 
 var app = express(); 
+
+nunjucks.configure('/views/index.html');
 
 app.use(volleyball);
 
