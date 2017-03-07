@@ -8,6 +8,12 @@ router.get('/', function (req, res) {
   res.render( 'index', { tweets: tweets } );
 });
 
+router.get('/users/:name', function(req, res) {
+  var name = req.params.name;
+  var list = tweetBank.find( {name: name} );
+  res.render( 'index', { user: name, tweets: list } );
+});
+
 // router.get('public/stylesheets/style.css', function(req, res) {
 //     // res.render( 'index', {tweets: "hiya"})
 //     // res.sendFile(__dirname + '/style.css')

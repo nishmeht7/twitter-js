@@ -2,7 +2,7 @@ const express = require('express');
 const volleyball = require('volleyball');
 const nunjucks = require('nunjucks');
 const routes = require('./routes');
-const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+// const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 
 var app = express(); 
 

@@ -57,3 +57,35 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+.tweet-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tweet-content {
+    font-size: 16px;
+}
+
+.tweet-list {
+    border-style: hidden;
+    margin-bottom: 10px;
+}
+
+.list-img {
+    display: block;
+    width: 12%;
+    height: 8%;
+    float: left;
+    left: 15px;
+    position: absolute;
+}
+
+ul {
+    list-style: none;
+    display: block;
+    margin: auto;
+    width: 80%;
+    left: 15px;
+
+}
