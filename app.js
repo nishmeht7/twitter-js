@@ -1,6 +1,7 @@
 const express = require('express'); 
 const volleyball = require('volleyball');
 const nunjucks = require('nunjucks');
+const routes = require('./routes');
 const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 
 var app = express(); 
@@ -15,14 +16,16 @@ nunjucks.configure('views', { noCache: true}); // point nunjucks to the proper d
 // })
 
 app.use(volleyball); //volleyball is middleware that gets the status of the response 
+app.use('/', routes);
+app.use(express.static('public'));
 
-app.get('/', function(req, res){
-	res.render( 'index', {title: 'Welcome to twitter Bitch', people: people} );
-});
+// app.get('/', function(req, res){
+// 	res.render( 'index', {title: 'Welcome to twitter Bitch', people: people} );
+// });
 
-app.get('/news', function(req, res){
-	res.render('index', {title:"Twitter sucks!"});
-});
+// app.get('/news', function(req, res){
+// 	res.render('index', {title:"Twitter sucks!"});
+// });
 
 app.listen(3000, function(){
 	console.log("Using port number 3000"); 
