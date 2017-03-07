@@ -1,9 +1,11 @@
 const _ = require('lodash');
 
 var data = []; //stores all the tweets 
+var tweetCount = 0;
 
 function add (name, content) {
-  data.push({ name: name, content: content });
+  data.push({ name: name, content: content, id: tweetCount});
+  tweetCount++;
 }
 
 function list () {
@@ -42,11 +44,11 @@ const getFakeTweet = function() {
 for (let i = 0; i < 10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
-add('Donald Trump', 'Build a Wall'); 
-var asshole = find({name: 'Donald Trump'}); 
-asshole.forEach(function(tweets){
-	console.log(tweets.content);
-})
+// add('Donald Trump', 'Build a Wall'); 
+// var asshole = find({name: 'Donald Trump'}); 
+// asshole.forEach(function(tweets){
+// 	console.log(tweets.content);
+// })
 
-
-console.log(data); 
+// var f = find({id: 0})
+// console.log(f)
